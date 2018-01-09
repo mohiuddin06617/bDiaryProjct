@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="Resource/form_buttonDesign.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <style>
+        .close-image {
+            display: block;
+            float: right;
+            position: relative;
+            top: 120%;
+            right: 4%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button id='groupCreationButton2' class='button'>Create a Group</button>
+    <div id='groupCreation2'>
+        <div id='groupDetails2'>
+            <input type='text' id='groupName' placeholder='Enter Your Group Name' class='groupNameEntry'>
+            <button id='buttonCreate' class='button'>Create</button>
+            <img class="close-image" src="Resource/close_icon.png"/>
+        </div>
+    </div>
+    <div id="groupCrationAnswer2">
+        <span id="groupCrationAnswerSpan"></span>
+    </div>
+    <div class="groupJoinDiv">
+        <h3>OR</h3>
+        <button class="btn btn-info btn-lg" id="groupJoinButton">Join a Group</button>
+        <div class="groupJoinSearch" id="groupJoinSearch">
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-sm-2">Enter Group Name</label>
+                    <div class="col-sm-8">
+                        <input class="form-control input input-lg" id="groupJoinQuery"
+                               placeholder="Enter Group Name Searh Here"/>
+                        <ul id="groupJoinQueryResult"></ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <button class="btn btn-warning btn-lg" id="hideJoinDIv">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('groupCreation2').style.display = 'none';
+    document.getElementById('groupJoinSearch').style.display = 'none';
+
+    $(document).ready(function () {
+        $("#groupCreationButton2").click(function () {
+            $("#groupCreationButton2").hide();
+            $("#groupDetails2").fadeIn();
+            //$("#groupCreation").show();
+            $("#groupCreation2").fadeIn();
+        });
+        $(".close-image").click(function () {
+            $("#groupCreation2").slideUp();
+            $("#groupCreationButton2").slideDown();
+        });
+        $("#hideJoinDIv").click(function () {
+            $("#groupJoinSearch").slideUp();
+            $("#groupJoinButton").slideDown();
+        });
+
+        $("#groupJoinButton").click(function () {
+            $("#groupJoinButton").fadeOut();
+            $("#groupJoinSearch").fadeIn('slow');
+
+        });
+    });
+    $(document).ready(function () {
+        $("#buttonCreate").click(function () {
+            var groupName = $("#groupName").val();
+            $.ajax({
+                type: 'POST',
+                url: 'groupCreationWithAjaxJQuery.php',
+                data: 'groupName=' + groupName,
+                success: function (data) {
+
+                    $("#groupCrationAnswerSpan").html(data);
+                    window.location.replace("logout.php");
+                }
+            });
+        });
+        var search = $('#groupJoinQuery');
+        /*search.on('input', function () {
+            var searchTerm = search.val();
+            if(searchTerm!=="") {
+                searchGroupName(searchTerm);
+            }
+        });*/
+        search.keyup(function () {
+            var searchTerm = search.val();
+            if(searchTerm!=="") {
+                searchGroupName(searchTerm);
+            }
+        });
+
+        function searchGroupName(searchTerm) {
+            $.ajax({
+                type: "POST",
+                url: 'searchGroupName.php',
+                data: {'searchTerm': searchTerm},
+                success: function (data) {
+                    var d=$.parseJSON(data);
+
+                        $('ul#groupJoinQueryResult').empty();
+/*
+                        $("#groupJoinQueryResult").html(d);
+*/
+                    console.log(d);
+                    for (i = 0; i < d.length; i++) {
+                        $('ul#groupJoinQueryResult').append('<li><a href="groupDetails.php?groupShowId=' + d[i].group_id + '">' + d[i].group_name + '</a></li>');
+
+                    }
+                },
+                error: function (result, xhr, status) {
+                    console.log(xhr);
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>

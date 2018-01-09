@@ -1,0 +1,82 @@
+.button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.itemName{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-size:100% ;
+
+}
+.dailyCostItemNamePrice{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-size:100% ;
+}
+.itemName2{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-size: 150%;
+}
+.mediumButton{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+}
+
+#moreThanOneMeal{
+    width:100%;
+    height:100%;
+}
+#closeMoreThanOneMealDiv{
+    display:block;
+    float:right;
+    width:30px;
+    height:29px;
+    cursor: pointer;
+}
+.textGroupInfo{
+    font-size: 150%;
+    font-family: CityBlueprint;
+}
+.groupNameEntry{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    font-size: 150%;
+}
+label{
+    font-style: oblique;
+    color: #132a80;
+    background-color: cornsilk;
+}

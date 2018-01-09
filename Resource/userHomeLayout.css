@@ -1,0 +1,52 @@
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+    height: auto;
+}
+
+header{
+    padding: 1em;
+    color: wheat;
+    background-color: lightblue;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+
+}
+
+nav ul {
+    list-style-type: inherit;
+
+}
+li{
+    color: black;
+    margin-top: 15%;
+}
+nav ul a {
+    text-decoration: none;
+
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid #132a80;
+    padding: 1em;
+    overflow: hidden;
+    height : auto;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: darkcyan;
+    text-align: center;
+}

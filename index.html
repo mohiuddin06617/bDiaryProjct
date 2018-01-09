@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entering Into Danger Zone</title>
+
+    <style>
+        .right-top{
+            line-height: 10px;
+            width:auto;
+            font-size:large;
+            font-family: tahoma;
+            margin-top: 50px;
+            margin-right: 50px;
+            position:fixed;
+            top:0;
+            right:0;
+        }
+
+    .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    }
+
+    .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    }
+
+    .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    }
+
+    .button1:hover span {
+    padding-right: 40px;
+    }
+    .button2:hover span {
+        padding-right: 40px;
+    }
+    .button:hover span:after {
+    opacity: 1;
+    right: 0;
+    }
+        .softLogo{
+            width: 80%;
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">
+<div class="softLogo">
+   <a href="index.html"> <img src="Resource/projectIcon.png" style="width: 20%;height: 20%;"></a>
+</div>
+    <div class="right-top">
+    <a href="signin.php">Sign In</a>
+    <a href="signup.php">Create Account</a>
+
+    </div>
+
+</div>
+
+<center>
+<div class="page-middle">
+    <table>
+        <tr>
+            <td><h1>Managing Your Stuff</h1></td>
+
+        </tr>
+        <tr>
+            <td><h3>managing and keeping your everyday work like own.</h3></td>
+        </tr>
+        <tr>
+        <td><a href="signup.php"><button class="button button1" style="vertical-align:middle"><span>Sign Up</span></button></a></td>
+        <td><a href="signin.php"><button class="button button2" style="vertical-align:middle"><span>Sign In </span></button></a></td>
+        </tr>
+    </table>
+</div>
+</center>
+</body>
+</html>
