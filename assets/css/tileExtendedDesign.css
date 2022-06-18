@@ -1,0 +1,11 @@
+@media screen and (max-width: 460px) {
+    .tile-icon {
+        visibility: hidden;
+    }
+    .tile-body-span-text {
+        font-size: 19px;
+    }
+    .tile-head-span-text {
+        font-size: 85%;
+    }
+}

@@ -1,0 +1,33 @@
+#mealShowTime{
+    margin: 20px auto;
+    width: 100%;
+    position: relative;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+    background-color: #9ce5ee;
+    color: black;
+
+}
+
+#mealShowTime:hover{
+    background-color: white;
+}
+#mealShowTime:active {
+    background-color: lightgoldenrodyellow;
+}
+#mealShowTime.active .unselectedTime {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+#mealShowTime.active .breakfastTime {
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+}
+#mealShowTime.active .lunchTime {
+    -webkit-transform: translateY(300%);
+    transform: translateY(300%);
+}
+#mealShowTime.active .dinnerTime {
+    -webkit-transform: translateY(400%);
+    transform: translateY(400%);
+}

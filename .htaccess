@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(index|signin|signup|userHome|userMeal|userFoodMenu)$ $1.php [NC,L]

@@ -1,0 +1,89 @@
+/* Responsive Button Design CSS*/
+@media (max-width: 768px) {
+    .btn-responsive {
+        padding:2px 4px;
+        font-size:100%;
+        line-height: 1;
+        border-radius:3px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .btn-responsive {
+        padding:4px 9px;
+        font-size:90%;
+        line-height: 1.2;
+    }
+}
+.btn-responsive{
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+.btn-responsive:hover{
+    box-shadow: 10px 10px 15px rgba(75, 88, 81, 0.78);
+}
+.btn-responsive:after {
+    content: "";
+    background: #64ffda;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.btn-responsive:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.btn-getting{
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn-getting:hover{
+    box-shadow: 10px 10px 15px rgba(75, 88, 81, 0.78);
+    transition: .2s;
+}
+
+.btn-getting:after {
+    content: "";
+    background: #64ffda;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1s;
+}
+.btn-getting:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}

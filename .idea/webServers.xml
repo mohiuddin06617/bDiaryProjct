@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0638782d-05c4-44cc-8502-3386dffb8af8" name="gdrive" url="https://drive.google.com/drive/u/1/folders/0B3dunNywqAqXaF9nVjFORXd1QlU">
+        <fileTransfer port="0" mountedRoot="C:\xampp\htdocs\bdiary" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
